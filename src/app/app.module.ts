@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
 
+import { DragulaModule } from 'ng2-dragula';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +19,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DragulaModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
