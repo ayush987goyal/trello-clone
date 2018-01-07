@@ -12,6 +12,9 @@ import { DragulaModule } from 'ng2-dragula';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { CoreModule } from './core/core.module';
+import { reducers } from './store/app.reducer';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +22,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     DragulaModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

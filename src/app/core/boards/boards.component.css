@@ -1,0 +1,7 @@
+.board {
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 1px solid green;
+}
