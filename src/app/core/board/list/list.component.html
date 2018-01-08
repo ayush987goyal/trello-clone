@@ -1,0 +1,17 @@
+<div class="card text-center">
+    <div class="card-header">
+      {{ list.name }}
+    </div>
+    <div class="card-body">
+      <input 
+        type="text" 
+        class="form-control"
+        [(ngModel)]="newItemName"
+        (keyup.enter)="addItemToList()">
+    </div>
+    <ul class="list-group list-group-flush" [dragula]="boardName" [dragulaModel]="list.items" style="height:20px">
+      <li class="list-group-item" *ngFor="let item of list.items">
+        {{ item.name }}
+      </li>
+    </ul>
+</div>

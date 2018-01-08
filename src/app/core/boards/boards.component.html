@@ -12,10 +12,10 @@
   </div>
 </div>
 <div class="row my-4">
-  <ng-container *ngFor="let board of (boardsState | async).boards">
-    <div class="col-md-3 m-1 board" (click)="gotoBoard(board.id)">
+  <ng-container *ngFor="let board of (boardsState | async).boards; let i = index">
+    <div class="col-md-3 m-1 board" (click)="gotoBoard(i)">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body text-center">
           {{ board.name }}
         </div>
       </div>

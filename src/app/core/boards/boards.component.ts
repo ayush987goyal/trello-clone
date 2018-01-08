@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { Board } from './../../models/board.model';
 import * as TrelloActions from '../../store/trello.actions';
 import * as fromApp from '../../store/app.reducer';
-import * as fromTrello from '../../store/trello.reducer';
 
 @Component({
   selector: 'app-boards',

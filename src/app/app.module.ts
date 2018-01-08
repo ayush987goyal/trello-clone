@@ -23,7 +23,6 @@ import { reducers } from './store/app.reducer';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    DragulaModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })

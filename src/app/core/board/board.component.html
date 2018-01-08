@@ -1,3 +1,27 @@
-<p>
-  board works!
-</p>
+<div class="row">
+  <p class="display-4">{{ (boardsState | async).boards[boardId].name }}</p>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-5 input-group">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Add a list"
+        [(ngModel)]="newListName"
+        (keyup.enter)="addList()">
+      <div class="input-group-append">
+        <button class="btn btn-outline-success" (click)="addList()" [disabled]="!newListName">Add</button>
+      </div>
+    </div>
+</div>
+<div class="row my-4">
+  <ng-container *ngFor="let list of (boardsState | async).boards[boardId].lists; let i = index">
+    <div class="col-md-3 m-1">
+      <app-list 
+        [list]="list"
+        [listId]="i"
+        [boardId]="boardId"
+        [boardName]="(boardsState | async).boards[boardId].name"></app-list>
+    </div>
+  </ng-container>
+</div>
